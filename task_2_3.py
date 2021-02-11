@@ -8,4 +8,3 @@ for idx in range(len(info)):
         info[idx] = ''.join(['"', f'{info[idx][0]}{int(info[idx][1:]):02d}', '"'])
 
 print(' '.join(info))
-
