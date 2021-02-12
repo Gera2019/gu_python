@@ -11,6 +11,7 @@ print(', '.join(new_list))
 # (доказать, что объект списка после сортировки остался тот же)
 print(sorted(goods))
 print(goods)
+
 # Создать новый список, содержащий те же цены, но отсортированные по убыванию.
 goods_sorted = sorted(goods).copy()
 print(list(reversed(goods_sorted)))
