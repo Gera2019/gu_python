@@ -14,8 +14,8 @@ def thesaurus(*args):
     person_dict = {}
     for item in sorted(args):
         first_char = item[0]
-        name_value = filter(lambda n: n.startswith(first_char), args)
-        person_dict.setdefault(first_char, [*name_value])
+        person_dict.setdefault(first_char, [*filter(lambda n: n.startswith(first_char), args)])
+
     return person_dict
 
 """
@@ -25,13 +25,13 @@ def thesaurus(*args):
 """
 
 def thesaurus_adv(*args):
-    person = {}
+    person_dict = {}
 
     for item in sorted(args):
-        first_char = item.split(' ')[1][0]
-        person.setdefault(first_char, thesaurus(*filter(lambda x: x.split(' ')[1].startswith(first_char), args)))
-        # print(person)
-    return person
+        surname_char = item.split(' ')[1][0]
+        person_dict.setdefault(surname_char, thesaurus(*filter(lambda x: x.split(' ')[1].startswith(surname_char), args)))
+
+    return person_dict
 
 
 print(thesaurus_adv(*names_adv))
