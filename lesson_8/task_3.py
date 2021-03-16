@@ -9,7 +9,7 @@ def type_logger(func):
             log.update({arg: type(arg)})
 
         result = func(*args, **kwargs)
-        print(func.__name__, *log.items(), '\nresult', result, type(result))
+        print(func.__name__, *log.items(), '\nresult', (result, type(result)))
 
         return result
     return wrapper
@@ -18,6 +18,5 @@ def type_logger(func):
 def calc_cube(x, y):
     return x + y
 
-
-a = calc_cube(x = 9, y = 8)
-print(a)
+# function test
+calc_cube(x = 9.7, y = 8)
